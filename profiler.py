@@ -17,20 +17,19 @@ class Profiler:
             self._current_iteration += 1
             return self._current_iteration
 
-    def record(self, segment_name: str, start_ms: float, end_ms: float, iteration: int = None):
+    def record(self, segment_name: str, start_ms: float, end_ms: float):
         """Record a segment's execution time in milliseconds."""
         duration = end_ms - start_ms
-        if iteration is None:
-            with self._lock:
-                iteration = self._current_iteration
-        record = {
-            'segment_name': segment_name,
-            'start': start_ms,
-            'end': end_ms,
-            'duration': duration,
-            'iteration': iteration
-        }
         with self._lock:
+            # Always use the current iteration
+            iteration = self._current_iteration
+            record = {
+                'segment_name': segment_name,
+                'start': start_ms,
+                'end': end_ms,
+                'duration': duration,
+                'iteration': iteration
+            }
             self._records.append(record)
             self._segment_counts[segment_name] += 1
             self._iteration_map[iteration].append(record)

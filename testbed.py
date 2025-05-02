@@ -30,7 +30,7 @@ def main():
         start_time = time.time() * 1000  # Convert to ms
         work_time = simulate_work(50, 150)
         end_time = time.time() * 1000
-        profiler.record("Segment A", start_time, end_time, iteration)
+        profiler.record("Segment A", start_time, end_time)
         print(f"  Segment A completed in {end_time - start_time:.2f}ms (simulated: {work_time:.2f}ms)")
         
         # Segment B (run multiple times per iteration)
@@ -38,14 +38,14 @@ def main():
             start_time = time.time() * 1000
             work_time = simulate_work(10, 50)
             end_time = time.time() * 1000
-            profiler.record("Segment B", start_time, end_time, iteration)
+            profiler.record("Segment B", start_time, end_time)
             print(f"  Segment B (run {j+1}) completed in {end_time - start_time:.2f}ms (simulated: {work_time:.2f}ms)")
         
         # Segment C
         start_time = time.time() * 1000
         work_time = simulate_work(30, 80)
         end_time = time.time() * 1000
-        profiler.record("Segment C", start_time, end_time, iteration)
+        profiler.record("Segment C", start_time, end_time)
         print(f"  Segment C completed in {end_time - start_time:.2f}ms (simulated: {work_time:.2f}ms)")
     
     # Print profiling results

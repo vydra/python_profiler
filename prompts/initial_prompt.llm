@@ -1,0 +1,24 @@
+We want to implement a profiler class that can capture execution times in various places of
+our python program.
+
+The profiler will support execution with loops.
+We want to arbitrarily time the execution of any segment of code.
+We will give each code segment a name.
+
+Computer average duration for a scope given the iteration number of its parent scope.
+
+Parameters: segment_name, start time, end time
+Time to be measured in millis.
+
+Example usage:
+
+```python
+ profiler = Profiler()
+ profiler.record("segment A", start, end)
+  profiler.record("segment B", start, end)
+ profiler.numberOfExecutions() -> int
+ profiler.listSegments() -> list[str]
+ profiler.iterationData(1) -> record
+ ```
+
+ Generate python class Profiler to support above behavior.

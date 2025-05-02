@@ -1,0 +1,35 @@
+# Python Linting and Formatting Rules
+# This file defines rules for Python code style, linting, and best practices.
+
+# Example rules for Python projects (customize as needed)
+
+lint:
+  enabled: true
+  tools:
+    - flake8
+    - pylint
+    - mypy
+
+flake8:
+  max-line-length: 88
+  ignore:
+    - E203
+    - W503
+
+pylint:
+  disable:
+    - missing-docstring
+    - invalid-name
+  max-line-length: 88
+
+mypy:
+  ignore-missing-imports: true
+
+format:
+  enabled: true
+  tool: black
+  black:
+    line-length: 88
+    skip-string-normalization: false
+
+# Add additional rules or tools as needed for your project

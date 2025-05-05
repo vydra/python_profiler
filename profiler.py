@@ -63,9 +63,9 @@ class Profiler:
 # Example usage:
 # profiler = Profiler()
 # iter1 = profiler.start_iteration()
-# profiler.record("segment A", 1000, 1200, iter1)
-# profiler.record("segment B", 1200, 1300, iter1)
+# profiler.record("segment A", 1000, 1200)
+# profiler.record("segment B", 1200, 1300)
 # profiler.numberOfExecutions()
 # profiler.listSegments()
 # profiler.iterationData(iter1)
-# profiler.averageDuration("segment A", iter1)
+# profiler.averageDuration("segment A")
